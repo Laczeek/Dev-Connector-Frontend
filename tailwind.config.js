@@ -6,11 +6,13 @@ export default {
 			transparent: 'transparent',
 			current: 'currentColor',
 			white: '#ffffff',
-			blue: '#011f2a',
+			bluebg: '#011f2a',
+			greenbg: '#0c3e3b',
 			green: '#00ec64',
 			darkgreen: '#00664b',
 			black: '#000',
-			grey: '#b1bfbd'
+			grey: '#b1bfbd',
+			lightred: '#d19191'
 		}
 	},
 	plugins: [],

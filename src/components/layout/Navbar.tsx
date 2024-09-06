@@ -13,16 +13,16 @@ const Navbar = () => {
 				<ul className='mt-2 flex md:w-[35%] md:mt-0 md:gap-x-4'>
 					<li className='grow'>
 						<Link
-							to='profiles'
+							to='/profiles'
 							className='border-2 border-solid border-transparent   hover:border-black transition-colors duration-300 w-full py-2'>
 							Developers
 						</Link>
 					</li>
 					<li className='grow'>
 						<Link
-							to='register'
+							to='/sign-up'
 							className='border-2 border-solid border-transparent   hover:border-black transition-colors duration-300 w-full py-2'>
-							Register
+							Sign up
 						</Link>
 					</li>
 					<li className='grow'>
