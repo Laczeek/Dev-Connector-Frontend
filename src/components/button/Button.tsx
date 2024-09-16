@@ -1,16 +1,20 @@
 import { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
+import { LoadingOutlined } from '@ant-design/icons';
 
 interface ButtonProps {
 	href?: string;
 	type?: 'button' | 'reset' | 'submit';
 	isDisabled?: boolean;
-	style: 'light' | 'dark' | 'outlined-light' | 'outlined-dark';
+	isLoading?: boolean;
+	style: 'light' | 'dark' | 'danger' | 'outlined-light' | 'outlined-dark';
 	children: ReactNode;
 	styles?: string;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	onClick?: (...args: any[]) => any;
 }
 
-const Button = ({ href, type, style, styles = '', isDisabled, children }: ButtonProps) => {
+const Button = ({ href, type, style, styles = '', isLoading = false, isDisabled, children, ...props }: ButtonProps) => {
 	const btnStyles =
 		style === 'light'
 			? 'bg-green text-black'
@@ -18,7 +22,9 @@ const Button = ({ href, type, style, styles = '', isDisabled, children }: Button
 			? 'bg-black text-white'
 			: style === 'outlined-light'
 			? 'bg-transparent text-white border-solid border-2 border-green '
-			: 'bg-transparent text-black border-solid border-2 border-black ';
+			: style === 'outlined-dark'
+			? 'bg-transparent text-black border-solid border-2 border-black '
+			: 'bg-redAlert text-white';
 
 	if (href) {
 		return (
@@ -32,10 +38,14 @@ const Button = ({ href, type, style, styles = '', isDisabled, children }: Button
 
 	return (
 		<button
-			className={`${btnStyles} ${styles} px-4 py-2 rounded-md cursor-pointer disabled:cursor-not-allowed brightness-90 hover:brightness-125 transition-all duration-300 `}
+			className={`${btnStyles} ${styles} px-4 py-2 rounded-md cursor-pointer disabled:cursor-not-allowed disabled:opacity-30 brightness-90 hover:brightness-125 transition-all duration-300 ${
+				isLoading ? 'flex items-center gap-x-2' : ''
+			}`}
 			type={type}
-			disabled={isDisabled}>
+			disabled={isDisabled}
+			{...props}>
 			{children}
+			{isLoading && <LoadingOutlined />}
 		</button>
 	);
 };

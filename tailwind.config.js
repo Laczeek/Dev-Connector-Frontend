@@ -12,8 +12,11 @@ export default {
 			darkgreen: '#00664b',
 			black: '#000',
 			grey: '#b1bfbd',
-			lightred: '#d19191'
-		}
+			lightred: '#d19191',
+			yellowAlert: '#F6E96B',
+			redAlert: '#EE4E4E',
+			greenAlert: '#88D66C',
+		},
 	},
 	plugins: [],
 };

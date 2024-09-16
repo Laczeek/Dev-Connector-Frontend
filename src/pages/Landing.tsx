@@ -1,6 +1,14 @@
+import { useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
+
 import Button from '../components/button/Button';
+import { RootState } from '../store/store';
 
 const Landing = () => {
+	const { isAuthenticated } = useSelector((state: RootState) => state.auth);
+
+	if (isAuthenticated) return <Navigate to='/dashboard' replace={true} />;
+
 	return (
 		<section className="absolute bg-[url('assets/images/showcase.jpg')] top-0 bottom-0 left-0 right-0 bg-center bg-cover before:absolute before:w-full before:h-full before:bg-black before:bg-opacity-75 z-0 before:-z-10 flex justify-center items-center">
 			<div className='text-white text-center'>
