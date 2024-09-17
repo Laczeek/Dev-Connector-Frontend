@@ -16,5 +16,5 @@
 - nice looking animations
 - pleasant UI
 - loading spinners
-- routing based on searchbar
+- routing based on url
 - protected pages
