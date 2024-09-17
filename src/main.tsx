@@ -20,14 +20,21 @@ import Developers from './pages/Developers.tsx';
 import Developer from './pages/Developer.tsx';
 import Posts from './pages/Posts.tsx';
 import Post from './pages/Post.tsx';
+import ErrorPage from './pages/ErrorPage.tsx';
 
 import ProtectedRoute from './components/layout/ProtectedRoute.tsx';
 import './index.css';
+
 
 const router = createBrowserRouter([
 	{
 		path: '/',
 		element: <Layout />,
+		errorElement: (
+			<Layout>
+				<ErrorPage />
+			</Layout>
+		),
 		loader: async () => {
 			if (localStorage.getItem('jwt')) {
 				await store.dispatch(fetchUserBasedOnToken());
