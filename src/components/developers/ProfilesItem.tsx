@@ -17,7 +17,7 @@ const ProfilesItem = ({ skills, status, user, company, location }: IProfileShort
 					transition={{ type: 'spring', bounce: 0.65 }}>
 					<figure>
 						<img
-							src={`${import.meta.env.VITE_API_PREFIX}/${user.avatar}`}
+							src={user.avatar}
 							alt='User image.'
 							className='rounded-full object-cover'
 							width={160}

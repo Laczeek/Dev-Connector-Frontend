@@ -73,7 +73,7 @@ const PostItem = ({ post, removePostFromState }: PostItemProps) => {
 					<header className='text-center'>
 						<figure>
 							<img
-								src={`${import.meta.env.VITE_API_PREFIX}/${post.avatar}`}
+								src={post.avatar}
 								alt='User image'
 								width={120}
 								height={120}

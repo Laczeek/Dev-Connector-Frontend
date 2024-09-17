@@ -38,7 +38,7 @@ const CommentItem = ({ comment, postId, removeCommentFromState }: ICommentItemPr
 			<header className='text-center'>
 				<figure>
 					<img
-						src={`${import.meta.env.VITE_API_PREFIX}/${comment.avatar}`}
+						src={comment.avatar}
 						alt='User image'
 						width={60}
 						height={60}

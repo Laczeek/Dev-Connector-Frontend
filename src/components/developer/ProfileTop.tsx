@@ -42,7 +42,7 @@ const ProfileTop = ({ user, company, location, social, status }: IProfileTopProp
 			<div>
 				<figure className='overflow-hidden rounded-full w-fit'>
 					<motion.img
-						src={`${import.meta.env.VITE_API_PREFIX}/${user.avatar}`}
+						src={user.avatar}
 						alt='User avatar.'
 						width={200}
 						height={200}
