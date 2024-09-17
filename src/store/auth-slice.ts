@@ -53,7 +53,7 @@ const authSlice = createSlice({
 	name: 'auth',
 	initialState,
 	reducers: {
-		login: (state, action: PayloadAction<IAuthState>) => {
+		login: (_, action: PayloadAction<IAuthState>) => {
 			localStorage.setItem('jwt', action.payload.jwt!);
 			return action.payload;
 		},

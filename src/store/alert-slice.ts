@@ -9,7 +9,7 @@ export const alertSlice = createSlice({
 	name: 'alert',
 	initialState,
 	reducers: {
-		setAlert: (state, action: PayloadAction<IAlertState>) => {
+		setAlert: (_, action: PayloadAction<IAlertState>) => {
 			return action.payload;
 		},
 		removeAlert: () => {
