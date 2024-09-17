@@ -1,5 +1,5 @@
 # Dev-Connector Frontend
-> The build of this user interface is served by my express application.
+> The build of this project is served by my express application.
 >> [Live demo](https://dev-connector-drab.vercel.app/)
 
 ## Built with
